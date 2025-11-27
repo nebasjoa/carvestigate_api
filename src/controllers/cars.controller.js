@@ -3,8 +3,8 @@ import * as carService from '../services/cars.service.js';
 
 export async function listCars(req, res, next) {
   try {
-    const users = await carService.listCars();
-    res.json({ users });
+    const cars = await carService.listCars();
+    res.json({ cars });
   } catch (err) {
     next(err);
   }
@@ -12,9 +12,9 @@ export async function listCars(req, res, next) {
 
 export async function getCarById(req, res, next) {
   try {
-    const user = await carService.getCarById(req.params.id);
-    if (!user) return res.status(404).json({ message: 'Car not found' });
-    res.json({ user });
+    const car = await carService.getCarById(req.params.id);
+    if (!car) return res.status(404).json({ message: 'Car not found' });
+    res.json({ car });
   } catch (err) {
     next(err);
   }
@@ -22,8 +22,8 @@ export async function getCarById(req, res, next) {
 
 export async function createCar(req, res, next) {
   try {
-    const user = await carService.createUser(req.body);
-    res.status(201).json({ user });
+    const car = await carService.createUser(req.body);
+    res.status(201).json({ car });
   } catch (err) {
     next(err);
   }
