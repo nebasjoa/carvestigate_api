@@ -1,0 +1,30 @@
+my-express-api/
+├── src/
+│   ├── app.js               # Creates and configures the Express app
+│   ├── server.js            # Starts the HTTP server
+│   ├── config/
+│   │   ├── env.js           # Loads env vars, central config
+│   │   └── db.js            # Database connection (e.g. MariaDB/Postgres/Mongo)
+│   ├── routes/
+│   │   ├── index.js         # Main router, mounts all route modules
+│   │   └── user.routes.js   # Example resource routes (users)
+│   ├── controllers/
+│   │   └── user.controller.js   # Route handlers; no DB logic here
+│   ├── services/
+│   │   └── user.service.js      # Business logic, talks to models
+│   ├── models/
+│   │   └── user.model.js        # DB queries / ORM models
+│   ├── middlewares/
+│   │   ├── errorHandler.js      # Central error handler
+│   │   └── auth.js              # Example auth middleware
+│   ├── utils/
+│   │   └── logger.js            # Logger, helpers, etc.
+│   └── loaders/
+│       └── express.js           # Optional: configure app in one place
+│
+├── public/                  # Static files (if you serve any)
+├── tests/                   # Tests (Jest, Mocha, etc.)
+├── .env                     # Environment variables (never commit)
+├── .gitignore
+├── package.json
+└── README.md
