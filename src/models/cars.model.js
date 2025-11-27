@@ -31,7 +31,7 @@ export async function findByBrandModel(brand, model) {
       'SELECT * FROM cars WHERE brand = ? AND model = ?',
       [brand, model]
     );
-    return rows[0] || null;
+    return rows || null;
   } finally {
     conn.release();
   }
@@ -50,7 +50,7 @@ export async function findByBrandModelYear(brand, model, year) {
       `,
       [brand, model, year]
     );
-    return rows[0] || null;
+    return rows || null;
   } finally {
     conn.release();
   }
