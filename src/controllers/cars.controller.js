@@ -13,7 +13,7 @@ export async function listCars(req, res, next) {
 export async function getCarById(req, res, next) {
   try {
     const user = await carService.getCarById(req.params.id);
-    if (!user) return res.status(404).json({ message: 'User not found' });
+    if (!user) return res.status(404).json({ message: 'Car not found' });
     res.json({ user });
   } catch (err) {
     next(err);
