@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // API routes
-app.use('/api', routes);
+app.use('/v1', routes);
 
 // 404 + error handler
 app.use(notFound);
