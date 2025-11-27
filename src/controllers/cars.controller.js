@@ -20,6 +20,26 @@ export async function getCarById(req, res, next) {
   }
 }
 
+export async function getCarByBrandModel(req, res, next) {
+  try {
+    const car = await carService.getCarByBrandModel(req.params.brand, req.params.model);
+    if (!car) return res.status(404).json({ message: 'Car not found' });
+    res.json({ car });
+  } catch (err) {
+    next(err);
+  }
+}
+
+export async function getCarByBrandModelYear(req, res, next) {
+  try {
+    const car = await carService.getCarByBrandModelYear(req.params.brand, req.params.model, req.params.year);
+    if (!car) return res.status(404).json({ message: 'Car not found' });
+    res.json({ car });
+  } catch (err) {
+    next(err);
+  }
+}
+
 export async function createCar(req, res, next) {
   try {
     const car = await carService.createUser(req.body);
